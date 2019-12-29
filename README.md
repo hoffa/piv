@@ -21,3 +21,9 @@ piv < image.png
 ```
 
 piv reads image data is read from stdin. Output width can be specified with `-width`.
+
+By setting `-width` to `0`, you can view the image in its native resolution:
+
+```shell
+curl https://placekitten.com/600/600 | piv -width 0 | less -RS
+```

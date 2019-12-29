@@ -36,22 +36,38 @@ var blocks = []string{
 	"\033[47m \033[0m",
 }
 
-func main() {
-	width := flag.Int("width", 80, "width")
-	flag.Parse()
-	m, _, err := image.Decode(os.Stdin)
-	if err != nil {
-		log.Fatal(err)
-	}
-	b := m.Bounds()
-	ratio := float64(b.Max.X) / float64(b.Max.Y)
-	dst := image.NewRGBA(image.Rect(0, 0, *width, int(float64(*width)/ratio)))
-	draw.NearestNeighbor.Scale(dst, dst.Bounds(), m, m.Bounds(), draw.Over, nil)
-	bounds := dst.Bounds()
+func drawImage(p image.Image) {
+	bounds := p.Bounds()
 	for y := bounds.Min.Y; y < bounds.Max.Y; y++ {
 		for x := bounds.Min.X; x < bounds.Max.X; x++ {
-			fmt.Print(blocks[ansi.Index(dst.At(x, y))])
+			i := ansi.Index(p.At(x, y))
+			fmt.Print(blocks[i])
 		}
 		fmt.Println()
 	}
+}
+
+func scaledRectangle(r image.Rectangle, w int) image.Rectangle {
+	ratio := float64(r.Max.X) / float64(r.Max.Y)
+	h := int(float64(w) / ratio)
+	return image.Rect(0, 0, w, h)
+}
+
+func scaledImage(p image.Image, w int) image.Image {
+	bounds := p.Bounds()
+	dst := image.NewRGBA(scaledRectangle(bounds, w))
+	draw.NearestNeighbor.Scale(dst, dst.Bounds(), p, bounds, draw.Over, nil)
+	return dst
+}
+
+func main() {
+	width := flag.Int("width", 80, "width")
+	flag.Parse()
+
+	p, _, err := image.Decode(os.Stdin)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	drawImage(scaledImage(p, *width))
 }

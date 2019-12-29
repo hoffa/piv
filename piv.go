@@ -62,13 +62,12 @@ func scaledImage(p image.Image, w int) image.Image {
 }
 
 func main() {
-	width := flag.Int("width", 80, "width")
+	width := flag.Int("width", 80, "output image width")
 	flag.Parse()
 
 	p, _, err := image.Decode(os.Stdin)
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	drawImage(scaledImage(p, *width))
 }

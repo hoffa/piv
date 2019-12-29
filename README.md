@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.com/hoffa/piv.svg?branch=master)](https://travis-ci.com/hoffa/piv)
 [![Go Report Card](https://goreportcard.com/badge/github.com/hoffa/piv)](https://goreportcard.com/report/github.com/hoffa/piv)
 
-ANSI terminal image viewer.
+Fast ANSI terminal image viewer.
 
 Only supports the 8 standard ANSI colors. No 24-bit colors, no Unicode tricks.
 

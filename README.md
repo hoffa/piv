@@ -14,7 +14,7 @@ Only supports the 8 standard ANSI colors. No 24-bit colors, no Unicode tricks.
 go get github.com/hoffa/piv
 ```
 
-## Example
+## Usage
 
 ```shell
 piv < image.png

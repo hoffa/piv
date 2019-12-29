@@ -18,4 +18,4 @@ go get github.com/hoffa/piv
 piv < image.png
 ```
 
-Image data is read from stdin. Output width can optionally be specified with `-width`.
+piv reads image data is read from stdin. Output width can optionally be specified with `-width`.

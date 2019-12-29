@@ -48,7 +48,8 @@ func drawImage(p image.Image) {
 }
 
 func scaledRectangle(r image.Rectangle, w int) image.Rectangle {
-	ratio := float64(r.Max.X) / float64(r.Max.Y)
+	size := r.Size()
+	ratio := float64(size.X) / float64(size.Y)
 	h := int(float64(w) / ratio)
 	return image.Rect(0, 0, w, h)
 }

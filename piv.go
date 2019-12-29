@@ -26,15 +26,17 @@ var ansi = color.Palette{
 }
 
 var blocks = []string{
-	"\033[40m \033[0m",
-	"\033[41m \033[0m",
-	"\033[42m \033[0m",
-	"\033[43m \033[0m",
-	"\033[44m \033[0m",
-	"\033[45m \033[0m",
-	"\033[46m \033[0m",
-	"\033[47m \033[0m",
+	"\033[40m ",
+	"\033[41m ",
+	"\033[42m ",
+	"\033[43m ",
+	"\033[44m ",
+	"\033[45m ",
+	"\033[46m ",
+	"\033[47m ",
 }
+
+const end = "\033[0m"
 
 func drawImage(p image.Image) {
 	bounds := p.Bounds()
@@ -43,7 +45,7 @@ func drawImage(p image.Image) {
 			i := ansi.Index(p.At(x, y))
 			fmt.Print(blocks[i])
 		}
-		fmt.Println()
+		fmt.Println(end)
 	}
 }
 

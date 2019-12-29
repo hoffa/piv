@@ -17,7 +17,7 @@ go get github.com/hoffa/piv
 
 ## Usage
 
-```
+```shell
 Usage of piv:
   -width int
     	output image width (original size if 0) (default 80)

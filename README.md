@@ -22,7 +22,7 @@ Usage of piv:
     	output image width (original size if 0) (default 80)
 ```
 
-piv reads image data from stdin.
+Image data is read from stdin.
 
 ## Example
 

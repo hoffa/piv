@@ -2,6 +2,7 @@
 
 # piv
 
+[![Build Status](https://travis-ci.com/hoffa/piv.svg?branch=master)](https://travis-ci.com/hoffa/piv)
 [![Go Report Card](https://goreportcard.com/badge/github.com/hoffa/piv)](https://goreportcard.com/report/github.com/hoffa/piv)
 
 ANSI terminal image viewer.

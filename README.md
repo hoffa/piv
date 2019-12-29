@@ -22,9 +22,9 @@ Usage of piv:
     	output image width (original size if 0) (default 80)
 ```
 
-## Example
+piv reads image data from stdin.
 
-piv reads image data from stdin:
+## Example
 
 ```shell
 curl https://placekitten.com/600/600 | piv

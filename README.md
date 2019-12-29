@@ -4,6 +4,8 @@
 
 ANSI terminal picture viewer.
 
+Only supports the 8 standard ANSI colors. No 24-bit colors, no Unicode tricks.
+
 ## Installation
 
 ```shell

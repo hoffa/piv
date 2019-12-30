@@ -66,6 +66,12 @@ func scaledImage(p image.Image, r image.Rectangle) image.Image {
 }
 
 func main() {
+	flag.Usage = func() {
+		fmt.Println("Usage of piv:")
+		flag.PrintDefaults()
+		fmt.Println()
+		fmt.Println("Image data is read from standard input.")
+	}
 	w := flag.Int("width", 80, "output image width (native width if 0)")
 	ratio := flag.Float64("ratio", 0.5, "character width-to-height ratio")
 	flag.Parse()

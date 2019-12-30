@@ -1,5 +1,3 @@
-<img src="https://i.imgur.com/Jp9nccS.png" alt="Screenshot" width="75%" />
-
 # piv
 
 [![Build Status](https://travis-ci.com/hoffa/piv.svg?branch=master)](https://travis-ci.com/hoffa/piv)

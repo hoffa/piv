@@ -50,10 +50,10 @@ func drawImage(p image.Image) {
 }
 
 func scaledRectangle(r image.Rectangle, w int, ratio float64) image.Rectangle {
-	if w <= 0 {
-		return r
-	}
 	size := r.Size()
+	if w <= 0 {
+		w = size.X
+	}
 	h := float64(w*size.Y) / (ratio * float64(size.X))
 	return image.Rect(0, 0, w, int(h))
 }

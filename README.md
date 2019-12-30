@@ -8,7 +8,7 @@
 Fast ANSI terminal image viewer.
 
 - Simple Unix-style composability.
-- Supports PNG, GIF, JPEG and WEBP formats.
+- Supports PNG, GIF, JPEG, BMP, TIFF and WEBP formats.
 - Only uses the 8 standard ANSI colors. No 24-bit colors or Unicode tricks.
 
 ## Installation

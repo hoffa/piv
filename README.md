@@ -17,13 +17,13 @@ go get github.com/hoffa/piv
 
 ## Usage
 
-```shell
+Image data is read from stdin.
+
+```
 Usage of piv:
   -width int
     	output image width (original size if 0) (default 80)
 ```
-
-Image data is read from stdin.
 
 ## Example
 
@@ -31,7 +31,7 @@ Image data is read from stdin.
 curl https://placekitten.com/600/600 | piv
 ```
 
-Output width can be specified with `-width`. Setting it to `0` will display the image in its native resolution:
+Setting `-width` to `0` will display the image in its native resolution:
 
 ```shell
 curl https://placekitten.com/600/600 | piv -width 0 | less -RS

@@ -19,14 +19,14 @@ go get github.com/hoffa/piv
 
 ## Usage
 
-Image data is read from stdin.
-
 ```
 Usage of piv:
   -ratio float
-        character width-to-height ratio (default 0.5)
+    	character width-to-height ratio (default 0.5)
   -width int
-        output image width (native width if 0) (default 80)
+    	output image width (native width if 0) (default 80)
+
+Image data is read from standard input.
 ```
 
 ## Example

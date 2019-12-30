@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/TX8aCOa.png" alt="Screenshot" width="50%" />
+<img src="https://i.imgur.com/TX8aCOa.png" alt="Screenshot" width="75%" />
 
 # piv
 

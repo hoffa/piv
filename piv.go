@@ -49,30 +49,31 @@ func drawImage(p image.Image) {
 	}
 }
 
-func scaledRectangle(r image.Rectangle, w int) image.Rectangle {
+func scaledRectangle(r image.Rectangle, w int, ratio float64) image.Rectangle {
 	if w <= 0 {
 		return r
 	}
 	size := r.Size()
-	ratio := float64(size.X) / float64(size.Y)
-	h := int(float64(w) / ratio)
-	return image.Rect(0, 0, w, h)
+	h := float64(w*size.Y) / (ratio * float64(size.X))
+	return image.Rect(0, 0, w, int(h))
 }
 
-func scaledImage(p image.Image, w int) image.Image {
+func scaledImage(p image.Image, w int, ratio float64) image.Image {
 	bounds := p.Bounds()
-	dst := image.NewRGBA(scaledRectangle(bounds, w))
+	dst := image.NewRGBA(scaledRectangle(bounds, w, ratio))
 	draw.NearestNeighbor.Scale(dst, dst.Bounds(), p, bounds, draw.Over, nil)
 	return dst
 }
 
 func main() {
-	width := flag.Int("width", 80, "output image width (original size if 0)")
+	width := flag.Int("width", 80, "output image width (native width if 0)")
+	ratio := flag.Float64("ratio", 2.0, "character width-to-height ratio")
 	flag.Parse()
 
 	p, _, err := image.Decode(os.Stdin)
 	if err != nil {
 		log.Fatal(err)
 	}
-	drawImage(scaledImage(p, *width))
+
+	drawImage(scaledImage(p, *width, *ratio))
 }

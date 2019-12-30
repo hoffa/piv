@@ -22,7 +22,7 @@ Image data is read from stdin.
 ```
 Usage of piv:
   -ratio float
-        character width-to-height ratio (default 2)
+        character width-to-height ratio (default 0.5)
   -width int
         output image width (native width if 0) (default 80)
 ```

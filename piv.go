@@ -54,7 +54,7 @@ func scaledRectangle(r image.Rectangle, w int, ratio float64) image.Rectangle {
 	if w <= 0 {
 		w = size.X
 	}
-	h := float64(w*size.Y) / (ratio * float64(size.X))
+	h := (ratio * float64(w*size.Y)) / (float64(size.X))
 	return image.Rect(0, 0, w, int(h))
 }
 
@@ -67,7 +67,7 @@ func scaledImage(p image.Image, w int, ratio float64) image.Image {
 
 func main() {
 	width := flag.Int("width", 80, "output image width (native width if 0)")
-	ratio := flag.Float64("ratio", 2.0, "character width-to-height ratio")
+	ratio := flag.Float64("ratio", 0.5, "character width-to-height ratio")
 	flag.Parse()
 
 	p, _, err := image.Decode(os.Stdin)

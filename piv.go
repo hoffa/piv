@@ -12,6 +12,7 @@ import (
 	"os"
 
 	"golang.org/x/image/draw"
+	_ "golang.org/x/image/webp"
 )
 
 var ansi = color.Palette{

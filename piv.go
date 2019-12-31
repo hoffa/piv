@@ -17,7 +17,7 @@ import (
 	_ "golang.org/x/image/webp"
 )
 
-var ansi = color.Palette{
+var palette = color.Palette{
 	color.RGBA{0x00, 0x00, 0x00, 0xff}, // Black
 	color.RGBA{0xff, 0x00, 0x00, 0xff}, // Red
 	color.RGBA{0x00, 0xff, 0x00, 0xff}, // Green
@@ -47,7 +47,7 @@ func drawImage(p image.Image) {
 	bounds := p.Bounds()
 	for y := bounds.Min.Y; y < bounds.Max.Y; y++ {
 		for x := bounds.Min.X; x < bounds.Max.X; x++ {
-			i := ansi.Index(p.At(x, y))
+			i := palette.Index(p.At(x, y))
 			fmt.Print(blocks[i])
 		}
 		fmt.Println(end)

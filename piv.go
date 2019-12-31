@@ -26,7 +26,10 @@ var ansi = color.Palette{
 	color.RGBA{0xff, 0x00, 0xff, 0xff}, // Magenta
 	color.RGBA{0x00, 0xff, 0xff, 0xff}, // Cyan
 	color.RGBA{0xff, 0xff, 0xff, 0xff}, // White
+	color.RGBA{0x00, 0x00, 0x00, 0x00}, // Transparent
 }
+
+const end = "\033[0m"
 
 var blocks = []string{
 	"\033[40m ",
@@ -37,9 +40,8 @@ var blocks = []string{
 	"\033[45m ",
 	"\033[46m ",
 	"\033[47m ",
+	end + " ",
 }
-
-const end = "\033[0m"
 
 func drawImage(p image.Image) {
 	bounds := p.Bounds()

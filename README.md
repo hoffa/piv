@@ -21,9 +21,9 @@ go get github.com/hoffa/piv
 
 ```
 Usage of piv:
-  -r float
+  -ratio float
     	character width-to-height ratio (default 0.5)
-  -w int
+  -width int
     	output image width (native width if 0) (default 80)
 
 Image data is read from standard input.

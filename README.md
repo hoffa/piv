@@ -21,9 +21,9 @@ go get github.com/hoffa/piv
 
 ```
 Usage of piv:
-  -ratio float
+  -r float
     	character width-to-height ratio (default 0.5)
-  -width int
+  -w int
     	output image width (native width if 0) (default 80)
 
 Image data is read from standard input.
@@ -35,8 +35,8 @@ Image data is read from standard input.
 curl https://placekitten.com/600/600 | piv
 ```
 
-Setting `-width` to `0` will display the image in its native resolution:
+Setting `-w` to `0` will display the image in its native resolution:
 
 ```shell
-curl https://placekitten.com/600/600 | piv -width 0 | less -RS
+curl https://placekitten.com/600/600 | piv -w 0 | less -RS
 ```

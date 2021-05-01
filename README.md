@@ -2,7 +2,6 @@
 
 # piv
 
-[![Build Status](https://github.com/hoffa/piv/workflows/.github/workflows/workflow.yml/badge.svg)](https://github.com/hoffa/piv/actions)
 [![Go Report Card](https://goreportcard.com/badge/github.com/hoffa/piv)](https://goreportcard.com/report/github.com/hoffa/piv)
 
 Fast ANSI terminal image viewer.

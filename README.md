@@ -2,8 +2,6 @@
 
 # piv
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/hoffa/piv)](https://goreportcard.com/report/github.com/hoffa/piv)
-
 Fast ANSI terminal image viewer.
 
 - Supports PNG, GIF, and JPEG formats.
